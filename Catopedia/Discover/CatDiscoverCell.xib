@@ -22,14 +22,14 @@
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="EMI-V9-Nyg" customClass="RoundView" customModule="Catopedia" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="183" height="183"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="catImage" translatesAutoresizingMaskIntoConstraints="NO" id="kie-X8-K0U">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="catImage" translatesAutoresizingMaskIntoConstraints="NO" id="kie-X8-K0U">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="183"/>
                                     </imageView>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2G-aQ-XKi">
                                         <rect key="frame" x="0.0" y="153" width="183" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uh1-ec-aGV">
-                                                <rect key="frame" x="70.5" y="5" width="42" height="20"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Norwegian Forest Cat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uh1-ec-aGV">
+                                                <rect key="frame" x="8.5" y="5" width="166" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="igc-pn-jJj" customClass="RoundView" customModule="Catopedia" customModuleProvider="target">
                                 <rect key="frame" x="199" y="0.0" width="183" height="183"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="catImage" translatesAutoresizingMaskIntoConstraints="NO" id="et4-xI-Vka">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="catImage" translatesAutoresizingMaskIntoConstraints="NO" id="et4-xI-Vka">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="183"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDC-4q-BYb">
@@ -143,6 +143,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="leftImage" destination="kie-X8-K0U" id="ucQ-7M-ITU"/>
                 <outlet property="leftLabel" destination="Uh1-ec-aGV" id="V2Z-aQ-wqw"/>
                 <outlet property="leftLabelView" destination="N2G-aQ-XKi" id="J71-kS-G6U"/>
                 <outlet property="leftView" destination="EMI-V9-Nyg" id="zxK-nw-T7k"/>

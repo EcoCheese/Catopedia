@@ -20,15 +20,35 @@ class CatDiscoverCell: UITableViewCell {
     @IBOutlet weak var rightImage: UIImageView!
     @IBOutlet weak var rightLabel: UILabel!
     
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        let leftSingleTapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(leftTap))
+        let rightSingleTapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(rightTap))
+        
+        leftSingleTapGesture.numberOfTapsRequired = 1
+        rightSingleTapGesture.numberOfTapsRequired = 1
+        
+        leftView.addGestureRecognizer(leftSingleTapGesture)
+        rightView.addGestureRecognizer(rightSingleTapGesture)
+        
+        selectionStyle = .none
         
         
         // Initialization code
+    }
+    
+    @objc func leftTap(){
+        print("kekleft")
+    }
+    
+    @objc func rightTap(){
+        print("kekright")
     }
 
     
     
 }
+
+

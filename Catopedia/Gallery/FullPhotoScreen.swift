@@ -25,8 +25,6 @@ class FullPhotoScreen: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
-    
     @objc func singleTap(){
         self.dismiss(animated: true)
     }

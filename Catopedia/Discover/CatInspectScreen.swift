@@ -18,7 +18,7 @@ class CatInspectScreen: UIViewController {
     }
     
     @IBAction func wikiButton(_ sender: Any) {
-        UIApplication.shared.open(URL(string: oneCat[7]) as! URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string: oneCat[7])!, options: [:], completionHandler: nil)
     }
     
     @IBOutlet weak var catNameLabel: UILabel!
