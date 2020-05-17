@@ -18,16 +18,22 @@ class guessScreen: UIViewController {
     
     @IBOutlet weak var answerButton: UIButton!
     
+    @IBOutlet weak var catQuizImage: UIImageView!
+    
+
+
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         exitButton.layer.cornerRadius = 10.0
         answerButton.layer.cornerRadius = 10.0
+    
     
         
     }
 
+    
 }

@@ -11,12 +11,12 @@ import UIKit
 class DiscoverScreen: UIViewController {
 
     @IBOutlet weak var catsSearchBar: UISearchBar!
-    @IBOutlet weak var discoverTableView: UITableView!
+    @IBOutlet weak var catsCollectionView: UICollectionView!
     
     var listOfCats = [CatDetail]() {
         didSet {
             DispatchQueue.main.async{
-                self.discoverTableView.reloadData()
+                self.catsCollectionView.reloadData()
                 print("found \(self.listOfCats.count) cats")
                 
             }
@@ -39,12 +39,12 @@ class DiscoverScreen: UIViewController {
             }
         }
         
-        discoverTableView.delegate = self
-        discoverTableView.dataSource = self
+        catsCollectionView.delegate = self
+        catsCollectionView.dataSource = self
         
-        discoverTableView.allowsSelection = false
+//        discoverTableView.allowsSelection = false
         
-        discoverTableView.register(UINib(nibName: "CatDiscoverCell", bundle: nil), forCellReuseIdentifier: "catDiscoverCell")
+        catsCollectionView.register(UINib(nibName: "CatCardCell", bundle: nil), forCellWithReuseIdentifier: "catCardCell")
         
     
         // Do any additional setup after loading the view.
@@ -53,34 +53,32 @@ class DiscoverScreen: UIViewController {
 
 }
 
-extension DiscoverScreen: UITableViewDataSource, UITableViewDelegate {
+extension DiscoverScreen: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listOfCats.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "catDiscoverCell", for: indexPath) as! CatDiscoverCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = catsCollectionView.dequeueReusableCell(withReuseIdentifier: "catCardCell", for: indexPath) as! CatCardCell
+        let cat = listOfCats[indexPath.row]
         
-        let leftCat = listOfCats[indexPath.row * 2]
-        let rightCat = listOfCats[indexPath.row * 2 + 1]
-            
-        cell.leftLabel.text = leftCat.name
-        cell.rightLabel.text = rightCat.name
+        cell.catNameLabel.text = cat.name
+        //cell.catImage.load(url: URL(string: "https://cdn2.thecatapi.com/images/search?breed_ids=\(cat.id)")!)
+        //    http://api.thecatapi.com/v1/images/search?breed_ids=beng
         
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "inspectSegue", sender: self)
-        
     }
     
-    
+
     
     
 }
+
+
 

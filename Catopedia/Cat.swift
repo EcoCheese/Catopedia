@@ -18,6 +18,7 @@ import Foundation
 
 struct CatDetail:Decodable {
     var name:String
+    var id:String
     var origin:String
     var weight:CatWeight
 }

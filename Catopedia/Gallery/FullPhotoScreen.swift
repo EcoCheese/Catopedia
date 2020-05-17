@@ -10,8 +10,11 @@ import UIKit
 
 class FullPhotoScreen: UIViewController {
     
+    @IBOutlet weak var fullSizeImage: UIImageView!
 
+    var image = UIImage()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +24,7 @@ class FullPhotoScreen: UIViewController {
         
         self.view.addGestureRecognizer(singleTapGesture)
         
+        fullSizeImage.image = image
 
         // Do any additional setup after loading the view.
     }
