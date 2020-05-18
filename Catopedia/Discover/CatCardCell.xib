@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXa-31-o3n" customClass="RoundView" customModule="Catopedia" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="catImage2" translatesAutoresizingMaskIntoConstraints="NO" id="50K-DA-4HC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="50K-DA-4HC">
                                 <rect key="frame" x="0.0" y="0.0" width="250" height="210"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ggy-ct-K8h">
@@ -42,7 +42,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="50K-DA-4HC" secondAttribute="trailing" id="Bbg-qz-OVz"/>
                             <constraint firstItem="50K-DA-4HC" firstAttribute="top" secondItem="XXa-31-o3n" secondAttribute="top" id="EDr-eT-v5f"/>
@@ -84,7 +84,4 @@
             <point key="canvasLocation" x="282.60869565217394" y="175.44642857142856"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="catImage2" width="1076" height="618"/>
-    </resources>
 </document>

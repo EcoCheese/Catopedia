@@ -25,6 +25,8 @@ class GalleryScreen: UIViewController {
     
     let request = GalleryRequest()
     
+//    let imageLoader = ImageCacheLoader()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,20 +45,6 @@ class GalleryScreen: UIViewController {
         
         galleryCollectionView.register(UINib(nibName: "GalleryCollectionCell", bundle: nil), forCellWithReuseIdentifier: "galleryCollectionCell")
     }
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if segue.identifier == "fullPhotoSegue" {
-//
-//            let detailsVC = segue.destination as! FullPhotoScreen
-//            let cell = sender as! GalleryCollectionCell
-//            let indexPaths = self.galleryCollectionView.indexPath(for: cell)
-//            detailsVC.image =
-//
-//        }
-//
-//    }
 
 
 }
@@ -73,6 +61,7 @@ extension GalleryScreen: UICollectionViewDataSource, UICollectionViewDelegate {
         let ph = photos[indexPath.row]
         
         cell.photoImage.load(url: URL(string: ph.url)!)
+//        imageLoader.obtainImageWithPath(imagePath: photos)
         
         
         return cell

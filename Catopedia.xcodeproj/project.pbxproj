@@ -13,20 +13,22 @@
 		753E89AD246745AD006899C4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E89AC246745AD006899C4 /* Category.swift */; };
 		7552BB6B2471CAE9005EB6EB /* GalleryPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BB6A2471CAE9005EB6EB /* GalleryPhotos.swift */; };
 		7552BB6F2471D8FD005EB6EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552BB6E2471D8FD005EB6EB /* Main.storyboard */; };
+		756036B42473193D001880D9 /* CatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756036B32473193D001880D9 /* CatInfo.swift */; };
+		756036B62473194E001880D9 /* CatInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756036B52473194E001880D9 /* CatInfoRequest.swift */; };
+		7568836F24720A390004B670 /* QuizResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7568836E24720A390004B670 /* QuizResultScreen.swift */; };
 		757AA7C8246DB81D0006B81B /* GalleryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757AA7C6246DB81D0006B81B /* GalleryCollectionCell.swift */; };
 		757AA7C9246DB81D0006B81B /* GalleryCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757AA7C7246DB81D0006B81B /* GalleryCollectionCell.xib */; };
 		757B9A67246B2FB3000BA99B /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757B9A66246B2FB3000BA99B /* MainScreenCell.swift */; };
 		757B9A69246B34A7000BA99B /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757B9A68246B34A7000BA99B /* RoundView.swift */; };
 		757B9A6B246B362F000BA99B /* DiscoverScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757B9A6A246B362F000BA99B /* DiscoverScreen.swift */; };
 		757C3533246998E9003B707C /* GuessScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C3532246998E9003B707C /* GuessScreen.swift */; };
-		759A0222247075D300864D69 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A0221247075D200864D69 /* Cat.swift */; };
+		759A0222247075D300864D69 /* CatIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A0221247075D200864D69 /* CatIDs.swift */; };
 		759A0224247075E000864D69 /* CatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A0223247075E000864D69 /* CatRequest.swift */; };
 		759A0229247080F200864D69 /* CatCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A0227247080F200864D69 /* CatCardCell.swift */; };
 		759A022A247080F200864D69 /* CatCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 759A0228247080F200864D69 /* CatCardCell.xib */; };
 		75C4D086246B430600EA89D9 /* GalleryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4D085246B430600EA89D9 /* GalleryScreen.swift */; };
 		75D74EA3246DC766004BD3D3 /* FullPhotoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D74EA2246DC766004BD3D3 /* FullPhotoScreen.swift */; };
 		75E22935246DDC98008E73E9 /* CatInspectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E22934246DDC98008E73E9 /* CatInspectScreen.swift */; };
-		75E2293B246DE7EB008E73E9 /* CatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E2293A246DE7EB008E73E9 /* CatInfo.swift */; };
 		75E987F4246499EA00703B32 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E987F3246499EA00703B32 /* UIViewExt.swift */; };
 		75FF1675245A463400905914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF1674245A463400905914 /* AppDelegate.swift */; };
 		75FF1677245A463400905914 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF1676245A463400905914 /* SceneDelegate.swift */; };
@@ -60,20 +62,22 @@
 		753E89AC246745AD006899C4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		7552BB6A2471CAE9005EB6EB /* GalleryPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPhotos.swift; sourceTree = "<group>"; };
 		7552BB6E2471D8FD005EB6EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../../Desktop/Main.storyboard; sourceTree = "<group>"; };
+		756036B32473193D001880D9 /* CatInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfo.swift; sourceTree = "<group>"; };
+		756036B52473194E001880D9 /* CatInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfoRequest.swift; sourceTree = "<group>"; };
+		7568836E24720A390004B670 /* QuizResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultScreen.swift; sourceTree = "<group>"; };
 		757AA7C6246DB81D0006B81B /* GalleryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionCell.swift; sourceTree = "<group>"; };
 		757AA7C7246DB81D0006B81B /* GalleryCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCollectionCell.xib; sourceTree = "<group>"; };
 		757B9A66246B2FB3000BA99B /* MainScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCell.swift; sourceTree = "<group>"; };
 		757B9A68246B34A7000BA99B /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		757B9A6A246B362F000BA99B /* DiscoverScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverScreen.swift; sourceTree = "<group>"; };
 		757C3532246998E9003B707C /* GuessScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessScreen.swift; sourceTree = "<group>"; };
-		759A0221247075D200864D69 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
+		759A0221247075D200864D69 /* CatIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatIDs.swift; sourceTree = "<group>"; };
 		759A0223247075E000864D69 /* CatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRequest.swift; sourceTree = "<group>"; };
 		759A0227247080F200864D69 /* CatCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCardCell.swift; sourceTree = "<group>"; };
 		759A0228247080F200864D69 /* CatCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatCardCell.xib; sourceTree = "<group>"; };
 		75C4D085246B430600EA89D9 /* GalleryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryScreen.swift; sourceTree = "<group>"; };
 		75D74EA2246DC766004BD3D3 /* FullPhotoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPhotoScreen.swift; sourceTree = "<group>"; };
 		75E22934246DDC98008E73E9 /* CatInspectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInspectScreen.swift; sourceTree = "<group>"; };
-		75E2293A246DE7EB008E73E9 /* CatInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfo.swift; sourceTree = "<group>"; };
 		75E987F3246499EA00703B32 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		75FF1671245A463400905914 /* Catopedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catopedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75FF1674245A463400905914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +135,6 @@
 				759A0228247080F200864D69 /* CatCardCell.xib */,
 				75E22934246DDC98008E73E9 /* CatInspectScreen.swift */,
 				750BD9832470882B003360AA /* InformationCell.swift */,
-				75E2293A246DE7EB008E73E9 /* CatInfo.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				757C3532246998E9003B707C /* GuessScreen.swift */,
+				7568836E24720A390004B670 /* QuizResultScreen.swift */,
 			);
 			path = Guess;
 			sourceTree = "<group>";
@@ -187,8 +191,10 @@
 				757B9A6D246B368D000BA99B /* Guess */,
 				75C4D084246B42DF00EA89D9 /* Gallery */,
 				753E89AC246745AD006899C4 /* Category.swift */,
-				759A0221247075D200864D69 /* Cat.swift */,
+				759A0221247075D200864D69 /* CatIDs.swift */,
 				759A0223247075E000864D69 /* CatRequest.swift */,
+				756036B32473193D001880D9 /* CatInfo.swift */,
+				756036B52473194E001880D9 /* CatInfoRequest.swift */,
 				7552BB6A2471CAE9005EB6EB /* GalleryPhotos.swift */,
 				757B9A68246B34A7000BA99B /* RoundView.swift */,
 				750BD98724709AB2003360AA /* Extensions */,
@@ -353,22 +359,24 @@
 				753E89A524672223006899C4 /* MainScreen.swift in Sources */,
 				75D74EA3246DC766004BD3D3 /* FullPhotoScreen.swift in Sources */,
 				757B9A6B246B362F000BA99B /* DiscoverScreen.swift in Sources */,
+				7568836F24720A390004B670 /* QuizResultScreen.swift in Sources */,
 				7552BB6B2471CAE9005EB6EB /* GalleryPhotos.swift in Sources */,
 				757AA7C8246DB81D0006B81B /* GalleryCollectionCell.swift in Sources */,
 				75E987F4246499EA00703B32 /* UIViewExt.swift in Sources */,
 				75FF1675245A463400905914 /* AppDelegate.swift in Sources */,
+				756036B42473193D001880D9 /* CatInfo.swift in Sources */,
 				759A0224247075E000864D69 /* CatRequest.swift in Sources */,
 				757C3533246998E9003B707C /* GuessScreen.swift in Sources */,
 				75E22935246DDC98008E73E9 /* CatInspectScreen.swift in Sources */,
 				757B9A67246B2FB3000BA99B /* MainScreenCell.swift in Sources */,
 				750BD98924709ACB003360AA /* UIImageViewExt.swift in Sources */,
+				756036B62473194E001880D9 /* CatInfoRequest.swift in Sources */,
 				757B9A69246B34A7000BA99B /* RoundView.swift in Sources */,
 				75C4D086246B430600EA89D9 /* GalleryScreen.swift in Sources */,
 				750BD9842470882B003360AA /* InformationCell.swift in Sources */,
 				759A0229247080F200864D69 /* CatCardCell.swift in Sources */,
-				75E2293B246DE7EB008E73E9 /* CatInfo.swift in Sources */,
 				75FF1677245A463400905914 /* SceneDelegate.swift in Sources */,
-				759A0222247075D300864D69 /* Cat.swift in Sources */,
+				759A0222247075D300864D69 /* CatIDs.swift in Sources */,
 				753E89AD246745AD006899C4 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,7 @@ struct GalleryRequest {
     
     
     init() {
-        let resourceString = "https://api.thecatapi.com/v1/images/search?limit=3"
+        let resourceString = "https://api.thecatapi.com/v1/images/search?limit=15"
         guard let resourceURL = URL(string: resourceString) else {fatalError()}
         var request = URLRequest(url: resourceURL)
         request.addValue(API_KEY, forHTTPHeaderField: "x-api-key")
