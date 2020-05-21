@@ -26,7 +26,7 @@ class CatCardCell: UICollectionViewCell {
         
         var frame = layoutAttributes.frame
         frame.size.width = UIScreen.main.bounds.width / CGFloat(count) - CGFloat(count + 1) * offset / CGFloat(count)
-        frame.size.height = frame.size.width /*- (offset * 2)*/
+        frame.size.height = frame.size.width
         layoutAttributes.frame = frame
         return layoutAttributes
     }

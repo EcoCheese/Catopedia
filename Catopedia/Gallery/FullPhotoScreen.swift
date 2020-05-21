@@ -10,11 +10,15 @@ import UIKit
 
 class FullPhotoScreen: UIViewController {
     
-    @IBOutlet weak var fullSizeImage: UIImageView!
-
+// MARK: - Variables
+    
     var image = UIImage()
     
+// MARK: - Outlets
+    
+    @IBOutlet weak var fullSizeImage: UIImageView!
 
+// MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,13 +29,12 @@ class FullPhotoScreen: UIViewController {
         self.view.addGestureRecognizer(singleTapGesture)
         
         fullSizeImage.image = image
-
-        // Do any additional setup after loading the view.
     }
+    
+// MARK: - Functions
     
     @objc func singleTap(){
         self.dismiss(animated: true)
     }
-
 }
 

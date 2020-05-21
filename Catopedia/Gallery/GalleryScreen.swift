@@ -9,10 +9,8 @@
 import UIKit
 
 class GalleryScreen: UIViewController {
-
-    @IBOutlet weak var galleryCollectionView: UICollectionView!
     
-
+// MARK: - Variables
     var photos = [GalleryPhotos]() {
         didSet {
             DispatchQueue.main.async{
@@ -25,8 +23,10 @@ class GalleryScreen: UIViewController {
     
     let request = GalleryRequest()
     
-//    let imageLoader = ImageCacheLoader()
+// MARK: - Outlets
+    @IBOutlet weak var galleryCollectionView: UICollectionView!
     
+// MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,11 +45,12 @@ class GalleryScreen: UIViewController {
         
         galleryCollectionView.register(UINib(nibName: "GalleryCollectionCell", bundle: nil), forCellWithReuseIdentifier: "galleryCollectionCell")
     }
-
-
 }
 
+// MARK: - CollectionView
+
 extension GalleryScreen: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
@@ -57,12 +58,8 @@ extension GalleryScreen: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = galleryCollectionView.dequeueReusableCell(withReuseIdentifier: "galleryCollectionCell", for: indexPath) as! GalleryCollectionCell
-        
         let ph = photos[indexPath.row]
-        
         cell.photoImage.load(url: URL(string: ph.url)!)
-//        imageLoader.obtainImageWithPath(imagePath: photos)
-        
         
         return cell
     }
@@ -73,12 +70,6 @@ extension GalleryScreen: UICollectionViewDataSource, UICollectionViewDelegate {
 
         let vc = storyboard?.instantiateViewController(identifier: "fullPhotoScreen") as! FullPhotoScreen
         vc.image = cell.photoImage.image!
-
         self.present(vc, animated: true)
-        
-        
     }
-    
-    
-
 }

@@ -10,15 +10,19 @@ import UIKit
 
 class MainScreen: UIViewController {
     
+// MARK: - Variables
+    
     var categories = [Category]()
-    var viewArray = [String]()
+    
+// MARK: - Outlets
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+// MARK: - API Loading
     
     var listOfCats = [CatInfo](){
         didSet {
             DispatchQueue.main.async {
-//                self.tableView.reloadData()
                 print("found \(self.listOfCats.count) images")
             }
         }
@@ -27,7 +31,6 @@ class MainScreen: UIViewController {
     var listOfIDs = [CatIDs]() {
         didSet {
             DispatchQueue.main.async{
-//                self.catsCollectionView.reloadData()
                 print("found \(self.listOfIDs.count) cats")
                 for i in 0 ..< self.listOfIDs.count {
                     let imageRequest = CatInfoRequest(id: self.listOfIDs[i].id)
@@ -36,10 +39,7 @@ class MainScreen: UIViewController {
                         case .failure(let error):
                             print(error)
                         case .success(let cat):
-//                            break
                             self?.listOfCats.append(cat.last!)
-
-                                            
                         }
                     }
                 }
@@ -47,8 +47,7 @@ class MainScreen: UIViewController {
         }
     }
     
-    
-    
+// MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,14 +65,14 @@ class MainScreen: UIViewController {
         
         view.setGradient(colorOne: UIColor(red: 227.0/255.0, green: 192.0/255.0, blue: 255.0/255.0, alpha: 1.0), colorTwo: UIColor(red: 255.0/255.0, green: 194.0/255.0, blue: 194.0/255.0, alpha: 1.0))
         
-        categories = createArray()
-        viewArray = ["DiscoverView","GuessView","GalleryView"]
-        
+        categories = createArray()        
         
         collectionView.delegate = self
         collectionView.dataSource = self
 
     }
+    
+// MARK: - Functions
     
     func createArray() -> [Category] {
         
@@ -91,6 +90,9 @@ class MainScreen: UIViewController {
     }
 }
 
+
+// MARK: - CollectionView
+
 extension MainScreen: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -106,20 +108,18 @@ extension MainScreen: UICollectionViewDataSource, UICollectionViewDelegate{
         
         cell.contentView.layer.cornerRadius = 20.0
         
-        //cell.contentView.layer.masksToBounds = false
+
         cell.layer.shadowColor = UIColor.gray.cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 1.0)
         cell.layer.shadowRadius = 4.0
         cell.layer.shadowOpacity = 0.5
         cell.layer.masksToBounds = false
-        //cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+
         
         return cell;
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let id = viewArray[indexPath.row]
         
         if indexPath.row == 0 {
             let vc = storyboard?.instantiateViewController(identifier: "discoverScreen") as! DiscoverScreen
@@ -127,10 +127,14 @@ extension MainScreen: UICollectionViewDataSource, UICollectionViewDelegate{
             
             self.present(vc, animated: true)
             
+        } else if indexPath.row == 1{
+            let vc = storyboard?.instantiateViewController(identifier: "guessScreen") as! GuessScreen
+            vc.listOfCats = listOfCats
+            
+            self.present(vc, animated: true)
+            
         } else {
-            performSegue(withIdentifier: id, sender: self)
+            performSegue(withIdentifier: "GalleryView", sender: self)
         }
-        
     }
-    
 }

@@ -23,7 +23,6 @@
 		757B9A6B246B362F000BA99B /* DiscoverScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757B9A6A246B362F000BA99B /* DiscoverScreen.swift */; };
 		757C3533246998E9003B707C /* GuessScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757C3532246998E9003B707C /* GuessScreen.swift */; };
 		759A0222247075D300864D69 /* CatIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A0221247075D200864D69 /* CatIDs.swift */; };
-		759A0224247075E000864D69 /* CatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A0223247075E000864D69 /* CatRequest.swift */; };
 		759A0229247080F200864D69 /* CatCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A0227247080F200864D69 /* CatCardCell.swift */; };
 		759A022A247080F200864D69 /* CatCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 759A0228247080F200864D69 /* CatCardCell.xib */; };
 		75C4D086246B430600EA89D9 /* GalleryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4D085246B430600EA89D9 /* GalleryScreen.swift */; };
@@ -72,7 +71,6 @@
 		757B9A6A246B362F000BA99B /* DiscoverScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverScreen.swift; sourceTree = "<group>"; };
 		757C3532246998E9003B707C /* GuessScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessScreen.swift; sourceTree = "<group>"; };
 		759A0221247075D200864D69 /* CatIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatIDs.swift; sourceTree = "<group>"; };
-		759A0223247075E000864D69 /* CatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRequest.swift; sourceTree = "<group>"; };
 		759A0227247080F200864D69 /* CatCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCardCell.swift; sourceTree = "<group>"; };
 		759A0228247080F200864D69 /* CatCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatCardCell.xib; sourceTree = "<group>"; };
 		75C4D085246B430600EA89D9 /* GalleryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryScreen.swift; sourceTree = "<group>"; };
@@ -118,9 +116,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7503EDEE24772EDE00CBBC7F /* API Data */ = {
+			isa = PBXGroup;
+			children = (
+				759A0221247075D200864D69 /* CatIDs.swift */,
+				756036B32473193D001880D9 /* CatInfo.swift */,
+				756036B52473194E001880D9 /* CatInfoRequest.swift */,
+				7552BB6A2471CAE9005EB6EB /* GalleryPhotos.swift */,
+			);
+			path = "API Data";
+			sourceTree = "<group>";
+		};
 		750BD98724709AB2003360AA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				757B9A68246B34A7000BA99B /* RoundView.swift */,
 				75E987F3246499EA00703B32 /* UIViewExt.swift */,
 				750BD98824709ACB003360AA /* UIImageViewExt.swift */,
 			);
@@ -187,16 +197,11 @@
 				753E89A424672223006899C4 /* MainScreen.swift */,
 				757B9A66246B2FB3000BA99B /* MainScreenCell.swift */,
 				7552BB6E2471D8FD005EB6EB /* Main.storyboard */,
+				753E89AC246745AD006899C4 /* Category.swift */,
 				757B9A6C246B3675000BA99B /* Discover */,
 				757B9A6D246B368D000BA99B /* Guess */,
 				75C4D084246B42DF00EA89D9 /* Gallery */,
-				753E89AC246745AD006899C4 /* Category.swift */,
-				759A0221247075D200864D69 /* CatIDs.swift */,
-				759A0223247075E000864D69 /* CatRequest.swift */,
-				756036B32473193D001880D9 /* CatInfo.swift */,
-				756036B52473194E001880D9 /* CatInfoRequest.swift */,
-				7552BB6A2471CAE9005EB6EB /* GalleryPhotos.swift */,
-				757B9A68246B34A7000BA99B /* RoundView.swift */,
+				7503EDEE24772EDE00CBBC7F /* API Data */,
 				750BD98724709AB2003360AA /* Extensions */,
 				75FF167D245A463700905914 /* Assets.xcassets */,
 				75FF167F245A463700905914 /* LaunchScreen.storyboard */,
@@ -365,7 +370,6 @@
 				75E987F4246499EA00703B32 /* UIViewExt.swift in Sources */,
 				75FF1675245A463400905914 /* AppDelegate.swift in Sources */,
 				756036B42473193D001880D9 /* CatInfo.swift in Sources */,
-				759A0224247075E000864D69 /* CatRequest.swift in Sources */,
 				757C3533246998E9003B707C /* GuessScreen.swift in Sources */,
 				75E22935246DDC98008E73E9 /* CatInspectScreen.swift in Sources */,
 				757B9A67246B2FB3000BA99B /* MainScreenCell.swift in Sources */,

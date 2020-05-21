@@ -9,34 +9,25 @@
 import UIKit
 
 class QuizResultScreen: UIViewController {
-
     
+// MARK: - Variables
+    var finalPoints = 0
+    let congratulations = ["Try again,", "Bad result,", "Not bad,", "Try better,", "Very good,", "Well done,"]
+    
+    
+// MARK: - Outlets and actions
     @IBOutlet weak var congratulationsLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     
     @IBOutlet weak var exitButton: UIButton!
-    @IBAction func exitButtonAction(_ sender: guessScreen) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func exitButtonAction(_ sender: GuessScreen) {
+        self.view.window!.rootViewController?.dismiss(animated: true)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         exitButton.layer.cornerRadius = 10.0
-        
-        // Do any additional setup after loading the view.
+        congratulationsLabel.text = congratulations[finalPoints]
+        pointsLabel.text = String(finalPoints) + "/5 points"
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

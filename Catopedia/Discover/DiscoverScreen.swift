@@ -25,17 +25,18 @@ class DiscoverScreen: UIViewController {
         catsCollectionView.delegate = self
         catsCollectionView.dataSource = self
         
-//        discoverTableView.allowsSelection = false
         
         catsCollectionView.register(UINib(nibName: "CatCardCell", bundle: nil), forCellWithReuseIdentifier: "catCardCell")
         catsCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 35, right: 0)
         
     
-        // Do any additional setup after loading the view.
+
     }
     
 
 }
+
+// MARK: - Collection View
 
 extension DiscoverScreen: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -46,6 +47,8 @@ extension DiscoverScreen: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = catsCollectionView.dequeueReusableCell(withReuseIdentifier: "catCardCell", for: indexPath) as! CatCardCell
         let cat = listOfCats[indexPath.row]
+        
+        
         
         cell.catNameLabel.text = cat.breeds[0].name
         cell.catImage.load(url: URL(string: cat.url)!)

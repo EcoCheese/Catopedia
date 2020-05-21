@@ -8,19 +8,25 @@
 
 import Foundation
 
+// MARK: - Data
+
 struct GalleryPhotos:Decodable {
     let url:String
 }
+
+// MARK: - Error
 
 enum GalleryError:Error {
     case noGalleryDataAvailable
     case canNotProcessGalleryData
 }
 
+// MARK: - Request
+
 struct GalleryRequest {
+    
     let API_KEY = "475db3af-30c3-4b40-9193-96b8dc99648a"
     let request:URLRequest
-    
     
     init() {
         let resourceString = "https://api.thecatapi.com/v1/images/search?limit=15"
@@ -46,10 +52,7 @@ struct GalleryRequest {
             } catch {
                 completion(.failure(.canNotProcessGalleryData))
             }
-            
-            
         }
         dataTask.resume()
     }
-    
 }

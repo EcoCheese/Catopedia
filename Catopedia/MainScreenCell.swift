@@ -10,10 +10,12 @@ import UIKit
 
 class MainScreenCell: UICollectionViewCell {
     
+// MARK: - Outlets
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+// MARK: - Functions
     func getCategory(category: Category){
         iconImage.image = category.icon
         titleLabel.text = category.title
@@ -30,5 +32,4 @@ class MainScreenCell: UICollectionViewCell {
         layoutAttributes.frame = frame
         return layoutAttributes
     }
-    
 }

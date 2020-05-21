@@ -10,12 +10,15 @@ import UIKit
 
 class GalleryCollectionCell: UICollectionViewCell {
 
-    
-    @IBOutlet weak var photoImage: UIImageView!
-    
+// MARK: - Variables
     let count = 3
     let offset:CGFloat = 2.0
     
+// MARK: - Outlets
+    @IBOutlet weak var photoImage: UIImageView!
+    
+    
+// MARK: - Functions
     override func awakeFromNib() {
         
         super.awakeFromNib()
