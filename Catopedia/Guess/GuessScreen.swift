@@ -15,6 +15,8 @@ class GuessScreen: UIViewController {
     var listOfCats = [CatInfo]()
     var data = [CatInfo]()
     
+    var buffer = [String]()
+    
     var answer = 5
     var iterator = 0
     var points = 0
@@ -49,17 +51,18 @@ class GuessScreen: UIViewController {
                     }
                 }
                 
+            } else if !clicked {
+                
                 if iterator == 4 {
                     showResultScreen()
+                } else {
+                    clicked = true
+                    iterator = iterator + 1
+                    answer = 5
+                    answerButton.setTitle("Answer", for: .normal)
+                    updateArray()
+                    buttonEnabling()
                 }
-                
-            } else if !clicked {
-                clicked = true
-                iterator = iterator + 1
-                answer = 5
-                answerButton.setTitle("Answer", for: .normal)
-                updateArray()
-                buttonEnabling()
             }
         }
     }
@@ -99,6 +102,9 @@ class GuessScreen: UIViewController {
         }
 
         reloadData()
+    
+        buffer.append(data[pos].breeds[0].name)
+        print(buffer)
     }
     
     func updateArray() {
@@ -107,16 +113,23 @@ class GuessScreen: UIViewController {
         }
 
         reloadData()
+    
+        externalCheck()
+        buffer.append(data[pos].breeds[0].name)
+        print(buffer)
+        catQuizImage.load(url: URL(string: data[pos].url)!)
     }
     
     func reloadData() {
+        
+        internalCheck()
+        
         for i in 0...3 {
             buttonImages[i].image = #imageLiteral(resourceName: "buttonFrame")
             answerButtons[i].setTitle(data[i].breeds[0].name, for: .normal)
         }
         
         pos = Int.random(in: 0...3)
-        print(pos)
         catQuizImage.load(url: URL(string: data[pos].url)!)
     }
     
@@ -132,5 +145,25 @@ class GuessScreen: UIViewController {
         vc.finalPoints = points
         
         self.present(vc, animated: true)
+    }
+    
+    func internalCheck(){
+        for i in 0...2 {
+            for j in i+1...3 {
+                if data[i].breeds[0].name == data[j].breeds[0].name {
+                    data[i] = listOfCats[Int.random(in: 0 ... listOfCats.count-1)]
+                    internalCheck()
+                }
+            }
+        }
+    }
+    
+    func externalCheck(){
+        for j in 0...buffer.count - 1 {
+            if data[pos].breeds[0].name == buffer[j] {
+                data[pos] = listOfCats[Int.random(in: 0 ... listOfCats.count-1)]
+                externalCheck()
+            }
+        }
     }
 }

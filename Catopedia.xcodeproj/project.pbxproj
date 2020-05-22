@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09536E432477E11D00179F8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09536E422477E11D00179F8D /* Main.storyboard */; };
 		750BD9842470882B003360AA /* InformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD9832470882B003360AA /* InformationCell.swift */; };
 		750BD98924709ACB003360AA /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD98824709ACB003360AA /* UIImageViewExt.swift */; };
 		753E89A524672223006899C4 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E89A424672223006899C4 /* MainScreen.swift */; };
 		753E89AD246745AD006899C4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E89AC246745AD006899C4 /* Category.swift */; };
 		7552BB6B2471CAE9005EB6EB /* GalleryPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552BB6A2471CAE9005EB6EB /* GalleryPhotos.swift */; };
-		7552BB6F2471D8FD005EB6EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552BB6E2471D8FD005EB6EB /* Main.storyboard */; };
 		756036B42473193D001880D9 /* CatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756036B32473193D001880D9 /* CatInfo.swift */; };
 		756036B62473194E001880D9 /* CatInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756036B52473194E001880D9 /* CatInfoRequest.swift */; };
 		7568836F24720A390004B670 /* QuizResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7568836E24720A390004B670 /* QuizResultScreen.swift */; };
@@ -55,12 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09536E422477E11D00179F8D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		750BD9832470882B003360AA /* InformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCell.swift; sourceTree = "<group>"; };
 		750BD98824709ACB003360AA /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		753E89A424672223006899C4 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		753E89AC246745AD006899C4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		7552BB6A2471CAE9005EB6EB /* GalleryPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPhotos.swift; sourceTree = "<group>"; };
-		7552BB6E2471D8FD005EB6EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../../Desktop/Main.storyboard; sourceTree = "<group>"; };
 		756036B32473193D001880D9 /* CatInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfo.swift; sourceTree = "<group>"; };
 		756036B52473194E001880D9 /* CatInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfoRequest.swift; sourceTree = "<group>"; };
 		7568836E24720A390004B670 /* QuizResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultScreen.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 				75FF1676245A463400905914 /* SceneDelegate.swift */,
 				753E89A424672223006899C4 /* MainScreen.swift */,
 				757B9A66246B2FB3000BA99B /* MainScreenCell.swift */,
-				7552BB6E2471D8FD005EB6EB /* Main.storyboard */,
+				09536E422477E11D00179F8D /* Main.storyboard */,
 				753E89AC246745AD006899C4 /* Category.swift */,
 				757B9A6C246B3675000BA99B /* Discover */,
 				757B9A6D246B368D000BA99B /* Guess */,
@@ -333,8 +333,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				759A022A247080F200864D69 /* CatCardCell.xib in Resources */,
-				7552BB6F2471D8FD005EB6EB /* Main.storyboard in Resources */,
 				75FF1681245A463700905914 /* LaunchScreen.storyboard in Resources */,
+				09536E432477E11D00179F8D /* Main.storyboard in Resources */,
 				75FF167E245A463700905914 /* Assets.xcassets in Resources */,
 				757AA7C9246DB81D0006B81B /* GalleryCollectionCell.xib in Resources */,
 			);
