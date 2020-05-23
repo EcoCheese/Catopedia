@@ -13,7 +13,6 @@ class MainScreen: UIViewController {
 // MARK: - Variables
     
     var categories = [Category]()
-    
     var sorted = [CatInfo]()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
