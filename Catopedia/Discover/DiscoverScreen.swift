@@ -15,15 +15,17 @@ class DiscoverScreen: UIViewController {
     
     
     var listOfCats = [CatInfo]()
+    var bufferedList = [CatInfo]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        bufferedList = listOfCats
         
         catsCollectionView.delegate = self
         catsCollectionView.dataSource = self
+        catsSearchBar.delegate = self
         
         
         catsCollectionView.register(UINib(nibName: "CatCardCell", bundle: nil), forCellWithReuseIdentifier: "catCardCell")
@@ -76,9 +78,28 @@ extension DiscoverScreen: UICollectionViewDelegate, UICollectionViewDataSource {
         self.present(vc, animated: true)
         
     }
-    
 
+}
+
+extension DiscoverScreen: UISearchBarDelegate {
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        self.listOfCats.removeAll()
+        
+        for item in self.bufferedList {
+            if item.breeds[0].name.lowercased().contains(catsSearchBar.text!.lowercased()) {
+                self.listOfCats.append(item)
+            }
+        }
+        
+        if catsSearchBar.text!.isEmpty {
+            self.listOfCats = self.bufferedList
+        }
+        
+        self.catsSearchBar.endEditing(true)
+        self.catsCollectionView.reloadData()
+    }
     
 }
 

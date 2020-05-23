@@ -16,9 +16,14 @@ class MainScreen: UIViewController {
     
     var sorted = [CatInfo]()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+          return .lightContent
+    }
+    
 // MARK: - Outlets
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var backgroundView: RoundView!
     
 // MARK: - API Loading
     
@@ -65,7 +70,7 @@ class MainScreen: UIViewController {
             }
         }
         
-        view.setGradient(colorOne: UIColor(red: 227.0/255.0, green: 192.0/255.0, blue: 255.0/255.0, alpha: 1.0), colorTwo: UIColor(red: 255.0/255.0, green: 194.0/255.0, blue: 194.0/255.0, alpha: 1.0))
+        backgroundView.setGradient(colorOne: UIColor(red: 227.0/255.0, green: 192.0/255.0, blue: 255.0/255.0, alpha: 1.0), colorTwo: UIColor(red: 255.0/255.0, green: 194.0/255.0, blue: 194.0/255.0, alpha: 1.0))
         
         categories = createArray()        
         
