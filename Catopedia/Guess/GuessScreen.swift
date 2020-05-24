@@ -16,6 +16,7 @@ class GuessScreen: UIViewController {
     var data = [CatInfo]()
     
     var buffer = [String]()
+    var imageLoader = ImageCacheLoader()
     
     var answer = 5
     var iterator = 0
@@ -68,6 +69,7 @@ class GuessScreen: UIViewController {
     }
     
     @IBOutlet weak var catQuizImage: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet var answerButtons: [UIButton]!
     @IBAction func answerButtonsAction(_ sender: UIButton) {
         let tag = sender.tag
@@ -91,6 +93,13 @@ class GuessScreen: UIViewController {
         exitButton.layer.cornerRadius = 10.0
         answerButton.layer.cornerRadius = 10.0
         
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = backgroundImage.bounds
+        backgroundImage.addSubview(blurView)
+        
+        
+    
         createArray()
     }
     
@@ -117,7 +126,7 @@ class GuessScreen: UIViewController {
         externalCheck()
         buffer.append(data[pos].breeds[0].name)
         print(buffer)
-        catQuizImage.load(url: URL(string: data[pos].url)!)
+        loadImages()
     }
     
     func reloadData() {
@@ -130,7 +139,8 @@ class GuessScreen: UIViewController {
         }
         
         pos = Int.random(in: 0...3)
-        catQuizImage.load(url: URL(string: data[pos].url)!)
+        loadImages()
+        
     }
     
     func buttonEnabling() {
@@ -139,7 +149,7 @@ class GuessScreen: UIViewController {
         }
     }
     
-    func showResultScreen(){
+    func showResultScreen() {
         let vc = storyboard?.instantiateViewController(identifier: "quizResultScreen") as! QuizResultScreen
 
         vc.finalPoints = points
@@ -147,7 +157,7 @@ class GuessScreen: UIViewController {
         self.present(vc, animated: true)
     }
     
-    func internalCheck(){
+    func internalCheck() {
         for i in 0...2 {
             for j in i+1...3 {
                 if data[i].breeds[0].name == data[j].breeds[0].name {
@@ -158,12 +168,21 @@ class GuessScreen: UIViewController {
         }
     }
     
-    func externalCheck(){
+    func externalCheck() {
         for j in 0...buffer.count - 1 {
             if data[pos].breeds[0].name == buffer[j] {
                 data[pos] = listOfCats[Int.random(in: 0 ... listOfCats.count-1)]
                 externalCheck()
             }
+        }
+    }
+    
+    func loadImages() {
+        imageLoader.obtainImageWithPath(imagePath: data[pos].url){ (image) in
+            
+            self.catQuizImage.image = image
+            self.backgroundImage.image = image
+            
         }
     }
 }

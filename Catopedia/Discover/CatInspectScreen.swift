@@ -28,13 +28,20 @@ class CatInspectScreen: UIViewController {
     }
     @IBOutlet weak var catNameLabel: UILabel!
     @IBOutlet weak var catPhoto: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
 // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialLight)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = backgroundImage.bounds
+        backgroundImage.addSubview(blurView)
+        
         catPhoto.image = catImagePhoto
+        backgroundImage.image = catImagePhoto
         
         catNameLabel.text = oneCat[5]
         

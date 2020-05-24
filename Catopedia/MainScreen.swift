@@ -127,38 +127,39 @@ extension MainScreen: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        if listOfCats.count == listOfIDs.count {
         
-        
-        if indexPath.row == 0 {
-            
-            if listOfCats.count == listOfIDs.count {
-            
-                if sorted.count < listOfCats.count {
-                    sorted = listOfCats
-                    
-                    for i in 0...listOfCats.count-1 {
-                        for j in 0...listOfIDs.count-1 {
-                            if listOfCats[i].breeds[0].id == listOfIDs[j].id {
-                                sorted[j] = listOfCats[i]
+            if indexPath.row == 0 {
+                
+                
+                
+                    if sorted.count < listOfCats.count {
+                        sorted = listOfCats
+                        
+                        for i in 0...listOfCats.count-1 {
+                            for j in 0...listOfIDs.count-1 {
+                                if listOfCats[i].breeds[0].id == listOfIDs[j].id {
+                                    sorted[j] = listOfCats[i]
+                                }
                             }
                         }
                     }
-                }
+                    
+                    let vc = storyboard?.instantiateViewController(identifier: "discoverScreen") as! DiscoverScreen
+                    vc.listOfCats = sorted
+                    
+                    self.present(vc, animated: true)
                 
-                let vc = storyboard?.instantiateViewController(identifier: "discoverScreen") as! DiscoverScreen
-                vc.listOfCats = sorted
+                
+            } else if indexPath.row == 1{
+                let vc = storyboard?.instantiateViewController(identifier: "guessScreen") as! GuessScreen
+                vc.listOfCats = listOfCats
                 
                 self.present(vc, animated: true)
+                
+            } else {
+                performSegue(withIdentifier: "GalleryView", sender: self)
             }
-            
-        } else if indexPath.row == 1{
-            let vc = storyboard?.instantiateViewController(identifier: "guessScreen") as! GuessScreen
-            vc.listOfCats = listOfCats
-            
-            self.present(vc, animated: true)
-            
-        } else {
-            performSegue(withIdentifier: "GalleryView", sender: self)
         }
     }
 }
