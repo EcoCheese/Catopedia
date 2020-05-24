@@ -86,7 +86,7 @@ class MainScreen: UIViewController {
         
         let category1 = Category(icon: #imageLiteral(resourceName: "icon1"), title: "Discover Cats", descr: "Get the entire list of cat breeds and all of their specialtities")
         let category2 = Category(icon: #imageLiteral(resourceName: "icon2"), title: "Guess Cats", descr: "Try yourself on guessing cat breeds by the photo")
-        let category3 = Category(icon: #imageLiteral(resourceName: "icon3"), title: "Cat Gallery", descr: "Enjoy an incredible collection of 99 cat images")
+        let category3 = Category(icon: #imageLiteral(resourceName: "icon3"), title: "Cat Gallery", descr: "Enjoy an incredible collection of cat images")
         
         tempArray.append(category1)
         tempArray.append(category2)
@@ -131,22 +131,25 @@ extension MainScreen: UICollectionViewDataSource, UICollectionViewDelegate{
         
         if indexPath.row == 0 {
             
-            if sorted.count < listOfCats.count {
-                sorted = listOfCats
-                
-                for i in 0...listOfCats.count-1 {
-                    for j in 0...listOfIDs.count-1 {
-                        if listOfCats[i].breeds[0].id == listOfIDs[j].id {
-                            sorted[j] = listOfCats[i]
+            if listOfCats.count == listOfIDs.count {
+            
+                if sorted.count < listOfCats.count {
+                    sorted = listOfCats
+                    
+                    for i in 0...listOfCats.count-1 {
+                        for j in 0...listOfIDs.count-1 {
+                            if listOfCats[i].breeds[0].id == listOfIDs[j].id {
+                                sorted[j] = listOfCats[i]
+                            }
                         }
                     }
                 }
+                
+                let vc = storyboard?.instantiateViewController(identifier: "discoverScreen") as! DiscoverScreen
+                vc.listOfCats = sorted
+                
+                self.present(vc, animated: true)
             }
-            
-            let vc = storyboard?.instantiateViewController(identifier: "discoverScreen") as! DiscoverScreen
-            vc.listOfCats = sorted
-            
-            self.present(vc, animated: true)
             
         } else if indexPath.row == 1{
             let vc = storyboard?.instantiateViewController(identifier: "guessScreen") as! GuessScreen

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090FCB59247ACC000008FAA8 /* ImageCacheLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090FCB58247ACC000008FAA8 /* ImageCacheLoader.swift */; };
 		09536E432477E11D00179F8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09536E422477E11D00179F8D /* Main.storyboard */; };
 		750BD9842470882B003360AA /* InformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD9832470882B003360AA /* InformationCell.swift */; };
 		750BD98924709ACB003360AA /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750BD98824709ACB003360AA /* UIImageViewExt.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		090FCB58247ACC000008FAA8 /* ImageCacheLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheLoader.swift; sourceTree = "<group>"; };
 		09536E422477E11D00179F8D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		750BD9832470882B003360AA /* InformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCell.swift; sourceTree = "<group>"; };
 		750BD98824709ACB003360AA /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				757B9A68246B34A7000BA99B /* RoundView.swift */,
 				75E987F3246499EA00703B32 /* UIViewExt.swift */,
 				750BD98824709ACB003360AA /* UIImageViewExt.swift */,
+				090FCB58247ACC000008FAA8 /* ImageCacheLoader.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				75E987F4246499EA00703B32 /* UIViewExt.swift in Sources */,
 				75FF1675245A463400905914 /* AppDelegate.swift in Sources */,
 				756036B42473193D001880D9 /* CatInfo.swift in Sources */,
+				090FCB59247ACC000008FAA8 /* ImageCacheLoader.swift in Sources */,
 				757C3533246998E9003B707C /* GuessScreen.swift in Sources */,
 				75E22935246DDC98008E73E9 /* CatInspectScreen.swift in Sources */,
 				757B9A67246B2FB3000BA99B /* MainScreenCell.swift in Sources */,

@@ -12,6 +12,7 @@ class CatCardCell: UICollectionViewCell {
 
     @IBOutlet weak var catImage: UIImageView!
     @IBOutlet weak var catNameLabel: UILabel!
+    @IBOutlet weak var blurredView: UIView!
     
     let count = 2
     let offset:CGFloat = 16.0
@@ -19,6 +20,18 @@ class CatCardCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
+        blurredView.backgroundColor = .clear
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterialDark)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        
+        blurView.translatesAutoresizingMaskIntoConstraints = false
+        
+        blurredView.insertSubview(blurView, at: 0)
+        
+        NSLayoutConstraint.activate([blurView.heightAnchor.constraint(equalTo: blurredView.heightAnchor), blurView.widthAnchor.constraint(equalTo: blurredView.widthAnchor)])
+        
         // Initialization code
     }
     

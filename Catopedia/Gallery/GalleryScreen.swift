@@ -22,6 +22,7 @@ class GalleryScreen: UIViewController {
     }
     
     let request = GalleryRequest()
+    var imageLoader = ImageCacheLoader()
     
 // MARK: - Outlets
     @IBOutlet weak var galleryCollectionView: UICollectionView!
@@ -59,7 +60,15 @@ extension GalleryScreen: UICollectionViewDataSource, UICollectionViewDelegate {
         
         let cell = galleryCollectionView.dequeueReusableCell(withReuseIdentifier: "galleryCollectionCell", for: indexPath) as! GalleryCollectionCell
         let ph = photos[indexPath.row]
-        cell.photoImage.load(url: URL(string: ph.url)!)
+//        cell.photoImage.load(url: URL(string: ph.url)!)
+        imageLoader.obtainImageWithPath(imagePath: ph.url) { (image) in
+
+            if let cell = collectionView.cellForItem(at: indexPath) as? GalleryCollectionCell {
+                cell.photoImage.image = image
+            }
+            
+        }
+        
         
         return cell
     }
@@ -67,9 +76,12 @@ extension GalleryScreen: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let cell = galleryCollectionView.cellForItem(at: indexPath) as! GalleryCollectionCell
+        
+        if cell.photoImage.image != nil {
 
-        let vc = storyboard?.instantiateViewController(identifier: "fullPhotoScreen") as! FullPhotoScreen
-        vc.image = cell.photoImage.image!
-        self.present(vc, animated: true)
+            let vc = storyboard?.instantiateViewController(identifier: "fullPhotoScreen") as! FullPhotoScreen
+            vc.image = cell.photoImage.image!
+            self.present(vc, animated: true)
+        }
     }
 }
